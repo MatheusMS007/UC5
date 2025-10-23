@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest</title>
+</head>
+<body>
+    <label for="numero"> Numero: </label>
+    <input type="text" id = "numero" placeholder="Digite um número">
+    
+    <button id = "botao" onclick="pegarNumero()"> Verificar </button>
+    <p id = "numero2"></p>
+    <p id = "numero3"></p>
+    <b></b>
+    <script>
+        function pegarNumero(){
+            let numero = document.getElementById('numero').value
+            if(isNaN(numero)){
+            alert(`Digite um número válido!!`)
+            }else if(numero >= 0 && numero % 2 == 0){
+                document.getElementById('numero3').innerHTML = "Número positivo e par"
+            }else if(numero >= 0 && numero != 0){
+                document.getElementById('numero3').innerHTML = "Número positivo e ímpar!"
+
+            }else{
+                document.getElementById('numero2').innerHTML = "Número negativo!"
+            }
+        }
+    </script>
+</body>
+</html>

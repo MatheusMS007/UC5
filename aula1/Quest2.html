@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="nota1-div">
+        <label for="atividade"> Atividade: </label>
+        <input type="text" id = "nota1" placeholder="Nota da atividade">
+        <button id = "botao" onclick = "recebenota1()"> Enviar </button>
+        
+    </div>
+
+    <div id = "nota2-div" style="display: none;">
+        <label for="prova"> Prova: </label>
+        <input type="text" id = "nota2" placeholder="Nota da prova">
+      
+        <button id = "botao" onclick = "recebenota2()"> Enviar </button>
+    </div>
+   
+    <div id = "result-div" style="display: none;">
+        <p id= "result"> </p>
+    </div>
+    
+
+    
+    <script>
+        let nota1, nota2
+        const recebenota1 =() => {
+            nota1 = parseFloat(document.getElementById("nota1").value) * 0.40 
+            document.getElementById("nota1-div").style.display = "none"
+            document.getElementById("nota2-div").style.display = "block"
+        }
+        const recebenota2 = () => {
+            nota2 = parseFloat(document.getElementById("nota2").value) * 0.60
+            document.getElementById("nota2-div").style.display = "none"
+            document.getElementById("result-div").style.display = "block"
+            const media = nota1 + nota2
+            document.getElementById("result").innerHTML= `Seu resultado é = ${media.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>

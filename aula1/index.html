@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+</head>
+<body>
+    <H1>Hello Word, Matthew!</H1>
+    <a href="main.js"></a>
+
+    <label for="nome"> Nome: </label>
+    <input type="text" id = "nome" placeholder="Adicionar seu nome">
+    <br>
+    <p id= "texto"> </p>
+    <button id = "botao" onclick = "pegarNome()"> Enviar </button>
+    <script>
+        function pegarNome(){
+            let conteudo = document.getElementById('nome').value
+            alert(`Olá, ${conteudo}!`)
+            document.getElementById('nome').value = ""
+            document.getElementById('texto').innerHTML = `Olá, ${conteudo}!`
+        }
+    </script>
+    <b></b>
+
+    <label for="numero"> Numero: </label>
+    <input type="text" id = "numero" placeholder="Digite um número">
+    <br>
+    <button id = "botao" onclick="pegarNumero()"> Verificar </button>
+    <p id = "numero2"></p>
+    <br>
+    <script>
+        function pegarNumero(){
+            let numero = document.getElementById('numero').value
+            if(isNaN(numero)){
+            alert(`Digite um número válido!!`)
+            }
+            else if(numero > 0){
+                document.getElementById('numero2').innerHTML = "Número positivo!"
+            }else{
+                document.getElementById('numero2').innerHTML = "Número negativo!"
+            }
+        }
+    </script>
+</body>
+</html>

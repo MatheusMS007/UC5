@@ -1,0 +1,25 @@
+{
+  "name": "uc5",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusMS007/UC5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusMS007/UC5/issues"
+  },
+  "homepage": "https://github.com/MatheusMS007/UC5#readme",
+  "description": "",
+  "dependencies": {
+    "electron": "^38.3.0"
+  }
+}
