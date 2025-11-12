@@ -1,4 +1,10 @@
 import {app, BrowserWindow} from 'electron'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __filename = fileURLToPath(import.meta.url)
+//console.log(__filename)
+const __dirname = path.dirname(__filename) // somente diretório
 
 //instanciando objeto = função anônima
 const criarJanela = () => {
@@ -8,8 +14,10 @@ const criarJanela = () => {
     title: "Exemplo - Desktop",
     webPreferences:{
         nodeIntegration: false,
+        contextIsolation: true,
         devTools: true,
-        preload: "preload.js"
+        preload: path.join(__dirname,"./preload.js"),
+        sandbox: false
     }
 })
 janela.loadFile("index.html")
